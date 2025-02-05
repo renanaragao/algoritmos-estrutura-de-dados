@@ -45,7 +45,7 @@ O limite de performance de um algoritmo de ordenação é $O(nlogn)$.
 - Pior caso: $O(n log n)$
 - Caso médio: $O(n log n)$;
 - Melhor caso: $O(n log n)$.
-
+  
 ## HEAPSORT
 
 - Pior caso: $O(n log n)$
@@ -58,3 +58,10 @@ O HEAPSORT tem uma representação em árvores, mas pode ser representada em arr
 - O índice do nó-pai para o nó $j$ será $(j-1/2)$;
 - O índice do nó-filho-esquerda para o nó $j$ será $(2*j)+1$;
 - O índice do nó-filho-direito para o nó $j$ será $(2*j)+2$.
+
+Uma **BINARy HEAP** pode ser "MIN HEAP" ou "MAX HEAP":
+
+- **MIN HEAP**: o valor do nó-pai é menor que o valor dos nós-filhos;
+- **MAX HEAP**: o valor do nó-pai é maior que o valor dos nós-filhos.
+
+A **BINARY HEAP** é fundamental para implementar o HEAPSORT, além disso, ela é uma das principais alternativas para implementação de um **PIRORITY QUEUE**.
