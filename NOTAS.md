@@ -65,3 +65,20 @@ Uma **BINARy HEAP** pode ser "MIN HEAP" ou "MAX HEAP":
 - **MAX HEAP**: o valor do nó-pai é maior que o valor dos nós-filhos.
 
 A **BINARY HEAP** é fundamental para implementar o HEAPSORT, além disso, ela é uma das principais alternativas para implementação de um **PIRORITY QUEUE**.
+
+# Análise de Algoritmos e Notação Big O
+
+Mesmo os algorítmos com mesmo Big O podem ter desempenhos diferentes:
+
+![](big-o-nao-eh-suficiente-para-definir-performance.png)
+
+Quantos passos são necessaŕios para esse algoritmo completar?
+
+![](search-algoritmo.png)
+
+A complexidade do algoritmo está relacionada com o tempo que você precisa pra processar e geralmente a resposta está relacionda com o pior caso.
+No caso do exemplo a complexidade é $O(n)$ = linear.
+
+Busca binária tem complexidade $O(log n)$, ou seja, a cada iteração o número de elementos que você tem que processar é reduzido pela metade:
+
+![](busca-binaria.png)
