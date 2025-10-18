@@ -72,11 +72,37 @@ Mesmo os algorítmos com mesmo Big O podem ter desempenhos diferentes:
 
 ![](big-o-nao-eh-suficiente-para-definir-performance.png)
 
-Quantos passos são necessaŕios para esse algoritmo completar?
+Analisando os algoritmos acima, podemos  verificar que no algoritmo da esquerda estamos acessando `a[i, j]` e no da direita `a[j, i]` e essa pequena diferença pode impactar a performance dependendo de como os dados estão organizados na memória.
+
+Isso acontece por causa da forma como a memória do computador armazena matrizes em C#: ela é organizada em row-major order (por linhas). Quando você acessa `a[i, j]` percorrendo primeiro o índice da linha e depois o da coluna, os dados são lidos em sequência na memória, aproveitando melhor o cache da CPU. Já quando você inverte e acessa `a[j, i]`, o acesso salta de um lugar para outro na memória, quebrando a localidade e tornando o algoritmo muito mais lento.
+
+## Ciclos
+
+![](ciclos-operacoes-assembly.png)
+
+Cada operação em assembly leva um número diferente de ciclos de clock para ser executada. Por exemplo, uma operação de adição pode levar 1 ciclo, enquanto uma multiplicação pode levar 3 ciclos. Isso significa que, mesmo que dois algoritmos tenham a mesma complexidade Big O, o número real de ciclos de clock necessários para executá-los pode variar significativamente dependendo das operações que eles realizam.
+
+Podemos usar por exemplo usar alternativas para reduzir o número de ciclos, como por exemplo usar SHL (shift left) ao invés de multiplicação por 2:
+
+```assembly
+SHL EAX, 1 ; Equivalente a EAX = EAX * 2
+```
+
+E usar SHR (shift right) ao invés de divisão por 2:
+
+```assembly
+SHR EAX, 1 ; Equivalente a EAX = EAX / 2
+```
+
+![](shl-shr.png)
+
+## Buscas
+
+Quantos passos são necessários para esse algoritmo completar?
 
 ![](search-algoritmo.png)
 
-A complexidade do algoritmo está relacionada com o tempo que você precisa pra processar e geralmente a resposta está relacionda com o pior caso.
+A complexidade do algoritmo está relacionada com o tempo que você precisa pra processar e geralmente a resposta está relacionada com o pior caso.
 No caso do exemplo a complexidade é $O(n)$ = linear.
 
 Busca binária tem complexidade $O(log n)$, ou seja, a cada iteração o número de elementos que você tem que processar é reduzido pela metade:
