@@ -136,3 +136,11 @@ Busca binária tem complexidade $O(log n)$, ou seja, a cada iteração o número
 ![](big-o.png)
 
 Big-o não é suficiente para definir performance de um algoritmo. Algoritmos com mesma notação Big O podem ter desempenhos diferentes dependendo de fatores como acesso à memória, operações realizadas, entre outros.
+
+#### Exemplo de análise do BUBBLESORT
+
+No BUBBLESORT, temos dois loops aninhados. O loop externo controla o número de passagens necessárias para ordenar o array, enquanto o loop interno realiza as comparações e trocas dos elementos adjacentes:
+
+![](bubblesort.png)
+
+Geralmento quando existe um loop aninhado, a complexidade é multiplicada. No caso do BUBBLESORT, ambos os loops percorrem o array de tamanho n, resultando em uma complexidade de $O(n) * O(n) = O(n^2)$ no pior caso.
