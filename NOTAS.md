@@ -110,3 +110,15 @@ No caso do exemplo a complexidade é $O(n)$ = linear.
 Busca binária tem complexidade $O(log n)$, ou seja, a cada iteração o número de elementos que você tem que processar é reduzido pela metade:
 
 ![](busca-binaria.png)
+
+### BUSCA LINEAR
+
+- Pior caso: $O(n)$;
+- Caso médio: $O(n)$;
+- Melhor caso: $O(1)$.
+
+### BUSCA BINÁRIA
+
+- Pior caso: $O(log n)$;
+- Caso médio: $O(log n)$;
+- Melhor caso: $O(1)$.
