@@ -122,3 +122,17 @@ Busca binária tem complexidade $O(log n)$, ou seja, a cada iteração o número
 - Pior caso: $O(log n)$;
 - Caso médio: $O(log n)$;
 - Melhor caso: $O(1)$.
+
+### Notação Big O
+
+- O(1) - Constante;
+- O(log n) - Logarítmica;
+- O(n) - Linear;
+- O(n log n) - Linearítmica;
+- O(n²) - Quadrática;
+- O(2^n) - Exponencial;
+- O(n!) - Fatorial;
+
+![](big-o.png)
+
+Big-o não é suficiente para definir performance de um algoritmo. Algoritmos com mesma notação Big O podem ter desempenhos diferentes dependendo de fatores como acesso à memória, operações realizadas, entre outros.
