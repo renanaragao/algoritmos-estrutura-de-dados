@@ -34,6 +34,8 @@ O limite de performance de um algoritmo de ordenação é $O(nlogn)$.
 - Caso médio: $O(n^2)$;
 - Melhor caso: $O(n)$.
 
+Obs.: O BUBBLESORT tem esse nome porque os maiores elementos "sobem" para o topo do array como bolhas na água.
+
 ## QUICKSORT
 
 - Pior caso: $O(n²)$;

@@ -49,36 +49,119 @@ def run_binary_search():
     input("\nPressione ENTER para continuar...")
 
 
+def run_sorting_demo(algorithm_name, algorithm_func):
+    """Demonstração de algoritmos de ordenação"""
+    print(f"\n{'='*60}")
+    print(f"DEMONSTRAÇÃO DE {algorithm_name.upper()}")
+    print(f"{'='*60}")
+    
+    try:
+        print("\nEscolha uma opção:")
+        print("1. Array de exemplo")
+        print("2. Digitar array personalizado")
+        
+        choice = input("\nOpção (1 ou 2): ").strip()
+        
+        if choice == "1":
+            arr = [64, 34, 25, 12, 22, 11, 90]
+        elif choice == "2":
+            arr_input = input("\nDigite os números separados por espaço: ")
+            arr = [int(x) for x in arr_input.split()]
+        else:
+            print("❌ Opção inválida!")
+            input("\nPressione ENTER para continuar...")
+            return
+        
+        print(f"\nArray original: {arr}")
+        resultado = algorithm_func(arr.copy(), verbose=True)
+        
+    except ValueError:
+        print("\n❌ Erro: Digite apenas números válidos!")
+    except Exception as e:
+        print(f"\n❌ Erro: {e}")
+    
+    input("\nPressione ENTER para continuar...")
+
+
+def run_heapsort_demo():
+    """Demonstração específica do Heap Sort"""
+    print(f"\n{'='*60}")
+    print(f"DEMONSTRAÇÃO DE HEAP SORT")
+    print(f"{'='*60}")
+    
+    print("\nEscolha uma opção:")
+    print("1. Heap Sort (ordenação)")
+    print("2. Binary Heap (inserções e remoções)")
+    
+    choice = input("\nOpção (1 ou 2): ").strip()
+    
+    if choice == "1":
+        try:
+            print("\nEscolha:")
+            print("1. Array de exemplo")
+            print("2. Digitar array personalizado")
+            
+            arr_choice = input("\nOpção (1 ou 2): ").strip()
+            
+            if arr_choice == "1":
+                arr = [4, 10, 3, 5, 1, 8, 2, 7]
+            elif arr_choice == "2":
+                arr_input = input("\nDigite os números separados por espaço: ")
+                arr = [int(x) for x in arr_input.split()]
+            else:
+                print("❌ Opção inválida!")
+                input("\nPressione ENTER para continuar...")
+                return
+            
+            print(f"\nArray original: {arr}")
+            resultado = BinaryHeap.heapSort(arr.copy(), verbose=True)
+            
+        except ValueError:
+            print("\n❌ Erro: Digite apenas números válidos!")
+        except Exception as e:
+            print(f"\n❌ Erro: {e}")
+    
+    elif choice == "2":
+        heap = BinaryHeap(verbose=True)
+        
+        try:
+            values_input = input("\nDigite os números a inserir (separados por espaço): ")
+            values = [int(x) for x in values_input.split()]
+            
+            for value in values:
+                heap.insert(value)
+            
+            print("\n" + "="*60)
+            print("Removendo elementos do heap (em ordem decrescente):")
+            print("="*60)
+            
+            while len(heap._data) > 0:
+                removed = heap.dequeue()
+        
+        except ValueError:
+            print("\n❌ Erro: Digite apenas números válidos!")
+        except Exception as e:
+            print(f"\n❌ Erro: {e}")
+    else:
+        print("❌ Opção inválida!")
+    
+    input("\nPressione ENTER para continuar...")
+
+
 def main():
     options = ["bubblesort", "quicksort", "heapsort", "binarysearch"]
     terminal_menu = TerminalMenu(options)
 
     index = terminal_menu.show()
 
-    if index in actions:
-        print(actions[index]([8, 5, 10, 6, 8]))
+    if index == 0:  # bubblesort
+        run_sorting_demo("bubblesort", bubblesort)
+    elif index == 1:  # quicksort
+        run_sorting_demo("quicksort", quicksort)
+    elif index == 2:  # heapsort
+        run_heapsort_demo()
     elif index == 3:  # binarysearch
         run_binary_search()
-
-    heap = BinaryHeap()
-
-    values = [4, 2, 8, 7, 1, 5, 3, 6, 10]
-
-    for value in values:
-        heap.insert(value)
-
-    print(heap._data)
-
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue())
-    print(heap.dequeue()) 
-
-    print(BinaryHeap.heapSort(values))
 
 
 if __name__ == "__main__":
