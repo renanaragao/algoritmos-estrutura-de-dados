@@ -7,9 +7,8 @@ from simple_term_menu import TerminalMenu
 from sort.bubblesort import bubblesort
 from sort.quicksort import quicksort
 from sort.heapsort import BinaryHeap
+from sort.selectionsort import selectionsort
 from search.binarysearch import binary_search, binary_search_recursive
-
-actions = {0: bubblesort, 1: quicksort}
 
 
 def run_binary_search():
@@ -149,7 +148,7 @@ def run_heapsort_demo():
 
 
 def main():
-    options = ["bubblesort", "quicksort", "heapsort", "binarysearch"]
+    options = ["bubblesort", "quicksort", "heapsort", "selectionsort", "binarysearch"]
     terminal_menu = TerminalMenu(options)
 
     index = terminal_menu.show()
@@ -160,7 +159,9 @@ def main():
         run_sorting_demo("quicksort", quicksort)
     elif index == 2:  # heapsort
         run_heapsort_demo()
-    elif index == 3:  # binarysearch
+    elif index == 3:  # selectionsort
+        run_sorting_demo("selectionsort", selectionsort)
+    elif index == 4:  # binarysearch
         run_binary_search()
 
 
