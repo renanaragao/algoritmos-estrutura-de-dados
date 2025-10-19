@@ -144,3 +144,17 @@ No BUBBLESORT, temos dois loops aninhados. O loop externo controla o número de 
 ![](bubblesort.png)
 
 Geralmento quando existe um loop aninhado, a complexidade é multiplicada. No caso do BUBBLESORT, ambos os loops percorrem o array de tamanho n, resultando em uma complexidade de $O(n) * O(n) = O(n^2)$ no pior caso.
+
+#### Exemplo de análise do SELECTIONSORT
+
+No SELECTIONSORT, temos dois loops aninhados. O loop externo percorre cada elemento do array, enquanto o loop interno procura o menor elemento no restante do array para trocá-lo com o elemento atual:
+
+![](selectionsort.png)
+
+Assim como no BUBBLESORT, a complexidade do SELECTIONSORT também é $O(n^2)$ no pior caso, pois ambos os loops percorrem o array de tamanho n.
+
+#### Comparação entre BUBBLESORT e SELECTIONSORT
+
+Em termos de complexidade de tempo, tanto o BUBBLESORT quanto o SELECTIONSORT têm uma complexidade de $O(n^2)$ no pior caso. No entanto, o SELECTIONSORT geralmente realiza menos trocas do que o BUBBLESORT, o que pode torná-lo mais eficiente em termos de operações de escrita, especialmente em arrays grandes.
+
+![alt text](bubblesortvsselectionsort.png)
